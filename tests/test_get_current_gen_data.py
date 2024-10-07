@@ -1,6 +1,6 @@
 import pytest
 
-from app.app import get_current_gen_data
+from app.get_current_gen_data import get_current_gen_data
 
 def test_power_gen_api_call():
 
