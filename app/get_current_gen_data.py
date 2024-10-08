@@ -22,7 +22,6 @@ def get_current_gen_data()-> dict:
     url = "https://api.solar.sheffield.ac.uk/pvlive/api/v4/gsp/0"
     response = requests.get(url)
     data = response.json()
-    print (data['data'][0][2])
     current_power_dict['SOLAR'] = data['data'][0][2]
 
     return current_power_dict
