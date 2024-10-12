@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime
+import pandas as pd
 
 def get_current_gen_data()-> dict:
 
@@ -24,7 +25,10 @@ def get_current_gen_data()-> dict:
     data = response.json()
     current_power_dict['SOLAR'] = data['data'][0][2]
 
-    return current_power_dict
+    current_power_df = pd.DataFrame(current_power_dict,index=[0])
+
+
+    return current_power_df
 
 if __name__ == "__main__":
     print (get_current_gen_data())
